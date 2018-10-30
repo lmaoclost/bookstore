@@ -1,0 +1,9 @@
+{
+  "name": "bookstore",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "install": "^0.12.2",
+    "jquery": "^3.3.1"
+  }
+}

@@ -1,0 +1,13 @@
+- if params[:controller] == 'about'
+  .well
+    h3 Location Info
+    ul
+      li The BookStore
+      li 499 Massachusetts Ave, Unit 2
+      li Boston, MA 02110
+      li Phone: (617) 555-5555
+      li Email: support@thebookstore.com
+- if params[:controller] == 'books' && params[:action] == 'index' || params[:action] == 'show'
+  .list-group
+    - @categories.each do |category|
+      = link_to category.name, category_path(category.id), class:'list-group-item'

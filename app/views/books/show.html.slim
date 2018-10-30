@@ -1,0 +1,36 @@
+#books-show
+  h2= @book.title
+  .books-show-left
+    = image_tag(@book.coverpath)
+  .books-show-right
+    h3 Book info:
+    ul
+      li
+        strong Category:
+        = @book.category.name
+      li
+        strong Author:
+        = @book.author.first_name
+        = @book.author.last_name
+      li
+        strong Publisher:
+        = @book.publisher.name
+      li
+        strong Year:
+        = @book.year
+      li
+        strong ISBN:
+        = @book.isbn
+      li
+        strong Format:
+        = @book.format
+      li
+        strong Pages:
+        = @book.pages
+    = link_to "Buy For "+@book.price, @book.buy, class:'btn btn-success',target:'_blank'
+  .clearfix
+  h4 Excerpt
+  p= @book.excerpt
+  h3 Admin Functions
+  = link_to 'Edit', edit_book_path(@book.id)
+  | | #{link_to 'Delete', book_path(@book), method: :delete, data: {confirm: 'Are you sure?'}}

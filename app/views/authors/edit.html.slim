@@ -1,0 +1,19 @@
+h2 Edit Author
+= form_for @author do |f|
+  /! Check for errors
+  - if @author.errors.any?
+    - @author.errors.full_messages.each do |msg|
+      /! Show errors
+      .alert.alert-danger= msg
+  .form-group
+    = f.label :first_name
+    br/
+    = f.text_field :first_name, class:'form-control'
+    br/
+  .form-group
+    = f.label :last_name
+    br/
+    = f.text_field :last_name, class:'form-control'
+    br/
+  = f.submit "Submit", class:'btn btn-primary'
+  = link_to "Cancel", authors_path, class:'btn btn-default'
